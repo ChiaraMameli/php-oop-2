@@ -6,6 +6,8 @@ include_once __DIR__ . '/models/customers/Customer.php';
 include_once __DIR__ . '/models/shipping/Address.php';
 include_once __DIR__ . '/models/shopping/CreditCard.php';
 include_once __DIR__ . '/models/shopping/Order.php';
+include_once __DIR__ . '/models/customers/RegisteredCustomer.php';
+
 
 
 $food_product = new FoodProduct('Happy Dog', 'Cibo secco', 'cane', 5, ['carne', 'piselli', 'carote'], '31-01-2023');
@@ -18,7 +20,6 @@ $address = new Address('Valeria', 'Caria', 'via Masaniello 23', '09121', 'Caglia
 $credit_card = new CreditCard('23454653', 'mastercard', '23-09-2025');
 
 $order = new Order($address, $credit_card, [$food_product, $toy_product], 20);
-
 
 // var_dump($food_product);
 // var_dump($toy_product);
@@ -33,3 +34,10 @@ $order = new Order($address, $credit_card, [$food_product, $toy_product], 20);
 
 // var_dump($order);
 
+
+//** CHECK */
+$registered_customer = new RegisteredCustomer('Valeria Caria', 'valeria@pippo.it', $address, $credit_card);
+$registered_customer->addToCart($food_product);
+$registered_customer->placeDiscountedOrder();
+
+var_dump($registered_customer);
