@@ -6,7 +6,7 @@ require_once __DIR__ . '../../shopping/Order.php';
 
 class Customer
 {
-    protected $cart;
+    public $cart;
 
     public function __construct()
     {
