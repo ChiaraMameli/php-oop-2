@@ -12,13 +12,13 @@ $food_product = new FoodProduct('Happy Dog', 'Cibo secco', 'cane', 5, ['carne', 
 $toy_product = new ToyProduct('Palla', 'Pallina da tennis', 'cane', 5, 'giallo', ['gomma', 'feltro']);
 
 $unregistered_customer = new Customer();
-$unregistered_customer->addToCart($food_product);
 
 $address = new Address('Valeria', 'Caria', 'via Masaniello 23', '09121', 'Cagliari', 'Italia');
 
 $credit_card = new CreditCard('23454653', 'mastercard', '23-09-2025');
 
 $order = new Order($address, $credit_card, [$food_product, $toy_product], 20);
+
 
 // var_dump($food_product);
 // var_dump($toy_product);
@@ -31,4 +31,5 @@ $order = new Order($address, $credit_card, [$food_product, $toy_product], 20);
 
 // var_dump($credit_card->isExpired());
 
-var_dump($order);
+// var_dump($order);
+

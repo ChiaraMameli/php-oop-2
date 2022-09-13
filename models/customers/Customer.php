@@ -1,6 +1,8 @@
 <?php
 
 require_once __DIR__ . '../../shopping/Cart.php';
+require_once __DIR__ . '../../shopping/Order.php';
+
 
 class Customer
 {
@@ -32,5 +34,12 @@ class Customer
     public function addToCart($product)
     {
         $this->cart->addProduct($product);
+    }
+
+    public function placeOrderAsGuest($address, $credit_card)
+    {
+        $products = $this->cart->getProducts();
+        $amount = $this->cart->getTotal();
+        $order = new Order($address, $credit_card, $products, $amount);
     }
 }

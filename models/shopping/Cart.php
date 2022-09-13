@@ -12,7 +12,7 @@ class Cart
     public function getTotal()
     {
         $total = 0;
-        foreach($products as $product){
+        foreach($this->products as $product){
             $total += $product->getPrice();
         }
         return $total;
