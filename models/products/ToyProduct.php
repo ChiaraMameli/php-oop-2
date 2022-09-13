@@ -8,9 +8,9 @@ class ToyProduct extends Product
     protected $materials;
 
 
-    public function __contstruct($name, $description, $category, $price, $color, $materials)
+    public function __construct($name, $description, $category, $price, $color, $materials)
     {
-        parent::__contstruct($name, $description, $category, $price);
+        parent::__construct($name, $description, $category, $price);
         $this->setColor($color);
         $this->setMaterials($materials);
     }

@@ -7,9 +7,9 @@ class FoodProduct extends Product
     protected $ingredients;
     protected $expiration;
 
-    public function __contstruct($name, $description, $category, $price, $ingredients, $expiration)
+    public function __construct($name, $description, $category, $price, $ingredients, $expiration)
     {
-        parent::__contstruct($name, $description, $category, $price);
+        parent::__construct($name, $description, $category, $price);
         $this->setIngredients($ingredients);
         $this->setExpiration($expiration);
     }
