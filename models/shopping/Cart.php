@@ -21,7 +21,7 @@ class Cart
     public function addProduct($product)
     {
         if(!($product instanceof Product)) throw new Exception ("$product must be an istance of Product");
-        $this->$products[] = $product;
+        $this->products[] = $product;
 
     } 
 }
